@@ -1,21 +1,21 @@
 .productCard {
-  padding: 20px;
   margin: 15px 0;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
   background-color: #ffffff;
+  transition: 0.3s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .productCard h2 {
   margin-bottom: 10px;
 }
 
-.productCard p {
-  margin: 5px 0;
-  color: #444;
-}
-
-.outOfStockClass {
+:global(.outOfStockClass) {
   background-color: #ffe5e5;
   border: 1px solid #e57373;
   opacity: 0.7;

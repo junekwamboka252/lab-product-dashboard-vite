@@ -1,24 +1,30 @@
-
 import React from 'react';
+import { Card, CardContent, Typography } from '@mui/material';
 import styles from '../styles/ProductCard.module.css';
 
 const ProductCard = ({ product }) => {
   return (
-    <div
-      className={
-        product.inStock
-          ? styles.productCard
-          : `${styles.productCard} outOfStockClass`
-      }
+    <Card
+      className={`${styles.productCard} ${
+        !product.inStock ? 'outOfStockClass' : ''
+      }`}
     >
-      <h2>{product.name}</h2>
+      <CardContent
+  className={!product.inStock ? 'outOfStockClass' : ''}
+>
+        <Typography variant="h6" component="h2">
+          {product.name}
+        </Typography>
 
-      <p>Price: {product.price}</p>
+        <Typography>
+          Price: {product.price}
+        </Typography>
 
-      <p>
-        {product.inStock ? 'In Stock' : 'Out of Stock'}
-      </p>
-    </div>
+        <Typography color={product.inStock ? 'success.main' : 'error.main'}>
+          {product.inStock ? 'In Stock' : 'Out of Stock'}
+        </Typography>
+      </CardContent>
+    </Card>
   );
 };
 

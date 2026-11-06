@@ -18,8 +18,8 @@ const App = () => {
   });
 
   const removeProduct = (id) => {
-    setProducts((prevProducts) =>
-      prevProducts.filter((product) => product.id !== id)
+    setProducts((previousProducts) =>
+      previousProducts.filter((product) => product.id !== id)
     );
   };
 

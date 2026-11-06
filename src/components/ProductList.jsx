@@ -1,5 +1,5 @@
-
 import React from 'react';
+import Button from '@mui/material/Button';
 import ProductCard from './ProductCard';
 
 const ProductList = ({ products, onRemove }) => {
@@ -13,9 +13,13 @@ const ProductList = ({ products, onRemove }) => {
         <div key={product.id}>
           <ProductCard product={product} />
 
-          <button onClick={() => onRemove(product.id)}>
+          <Button
+            variant="outlined"
+            color="error"
+            onClick={() => onRemove(product.id)}
+          >
             Remove
-          </button>
+          </Button>
         </div>
       ))}
     </div>
